@@ -45,7 +45,7 @@
 
 @media(max-height:780px){
     #page-home{
-        background-position-y: 40vh;
+        background-position-y: 200px;
     }
 
     #page-home main{
@@ -105,12 +105,3 @@
         margin: 5px;
     }
 }
-
-@media(min-height:320px){
-    #page-home header a{
-        flex-direction: column;
-    }
-
-}
-
-
