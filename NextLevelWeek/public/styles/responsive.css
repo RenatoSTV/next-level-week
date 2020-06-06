@@ -92,15 +92,7 @@
     }
 }
 
-@media(min-width:320px){
-    #page-search-results header img{
-        width: 45%;
-    }
-    
-    #page-search-results header a{
-        font-size: 14px;
-    }
-    
+@media(max-width:400px){
     #page-search-results header a span{
         margin: 5px;
     }
