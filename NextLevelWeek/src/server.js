@@ -1,3 +1,4 @@
+// chama o express para inicinar o servidor
 const express = require("express")
 const server = express()
 
@@ -9,7 +10,7 @@ const db = require("./database/db.js")
 server.use(express.static("public"))
 
 // habilitar o uso do req.body na nossa aplicação
-server.use(express.urlencoded({ extended:true }))
+server.use(express.urlencoded({ extended: true }))
 
 
 //utilizando template engine
@@ -23,21 +24,21 @@ nunjucks.configure("src/views", {
 //página inicial
 //req: Requisição
 //res: Resposta
-server.get("/", (req, res) =>{
-    return res.render("index.html", {title:"Um título"})
+server.get("/", (req, res) => {
+    return res.render("index.html")
 })
 
 
-server.get("/create-point", (req, res) =>{
-    
+server.get("/create-point", (req, res) => {
+
     //req.query: Query strings da nossa url
     //console.log(req.query)
-    
-    
+
+
     return res.render("create-point.html")
 })
 
-server.post("/savepoint", (req, res) =>{
+server.post("/savepoint", (req, res) => {
 
     // req.body: o corpo do nosso formulário
     //console.log(req.body)
@@ -66,46 +67,46 @@ server.post("/savepoint", (req, res) =>{
         req.body.items,
     ]
 
-    function afterInsertData(err){
-         if (err){
+    function afterInsertData(err) {
+        if (err) {
             console.log(err)
             return res.send("Erro no cadastro!")
-         }
+        }
 
-         console.log("Cadastrado com sucesso!")
-         console.log(this)
+        console.log("Cadastrado com sucesso!")
+        console.log(this)
 
-         return res.render("create-point.html", {saved: true})
+        return res.render("create-point.html", { saved: true })
     }
 
-     db.run(query, values, afterInsertData)
+    db.run(query, values, afterInsertData)
 
 })
 
 
 
-server.get("/search", (req, res) =>{
+server.get("/search", (req, res) => {
 
     const search = req.query.search
 
-    if(search == ""){
+    if (search == "") {
         //pesquisa vazia
-        return res.render("search-results.html", { total: 0}) 
+        return res.render("search-results.html", { total: 0 })
     }
 
 
 
     //pegar os dados do banco de dados
-    db.all(`SELECT * FROM places WHERE city LIKE '%${search}%'`, function(err, rows){
-        if (err){
+    db.all(`SELECT * FROM places WHERE city LIKE '%${search}%'`, function (err, rows) {
+        if (err) {
             return console.log(err)
         }
 
         const total = rows.length
-        
+
         //mostrar a página html com os dados do banco de dados
-        return res.render("search-results.html", { places: rows, total: total})    
-    })    
+        return res.render("search-results.html", { places: rows, total: total })
+    })
 })
 
 
