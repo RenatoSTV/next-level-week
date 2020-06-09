@@ -7,7 +7,7 @@
  
 ![projeto_ecoleta](https://user-images.githubusercontent.com/28743243/83954784-97f52000-a822-11ea-8e86-ed6146b0fc6f.png)
 
-O projeto consiste na formulação de um site para cadastro e pesquisa de empresas responsaveis por coletar e destinar de forma segura e sustentável, diversos tipo de materiais recicláveis.
+O projeto consiste na formulação de um site para cadastro e pesquisa de empresas responsáveis por coletar e destinar de forma segura e sustentável, diversos tipo de materiais recicláveis.
 
 <h3>Página de cadastro de empresas:</h3>
 
