@@ -1,7 +1,6 @@
-<h1>Next Level Week</h1>
- 
-<h2>Ecoleta</h2>
- 
+# Ecoleta
+
+## Sobre
 Projeto criado durante o curso NLW da <strong>Rocketseat</strong>.
  
 ![projeto_ecoleta](https://user-images.githubusercontent.com/28743243/83954784-97f52000-a822-11ea-8e86-ed6146b0fc6f.png)
